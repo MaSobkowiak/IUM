@@ -10,6 +10,7 @@ jobs:
         uses: actions/setup-python@v2.2.2
       - name: Setup iterative
       - uses: iterative/setup-cml@v1
+      - name: Train and eval
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
