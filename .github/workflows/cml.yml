@@ -1,14 +1,11 @@
 name: train_eval
 on: [push]
 jobs:
-  hello-job:
-    runs-on: ubuntu-latest
+  run:
+    runs-on: [ubuntu-latest]
     steps:
-      - name: Checkout repo
         uses: actions/checkout@v2
-      - name: Setup Python
         uses: actions/setup-python@v2.2.2
-      - name: Setup iterative
       - uses: iterative/setup-cml@v1
       - name: Train and eval
         env:
