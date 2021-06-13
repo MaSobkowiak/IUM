@@ -4,8 +4,8 @@ jobs:
   run:
     runs-on: [ubuntu-latest]
     steps:
-      -  uses: actions/checkout@v2
-      -  uses: actions/setup-python@v2.2.2
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2.2.2
       - uses: iterative/setup-cml@v1
       - name: Train and eval
         env:
