@@ -1,0 +1,22 @@
+name: train_eval
+on: [push]
+jobs:
+  hello-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+      - name: Setup Python
+        uses: actions/setup-python@v2.2.2
+      - name: Setup iterative
+      - uses: iterative/setup-cml@v1
+        env:
+          REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          pip install -r requirements.txt
+          python training.py
+          python evaluation.py
+
+          cat results.txt >> report.md
+          cml-publish plot.png --md >> report.md
+          cml-send-comment report.md
