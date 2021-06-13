@@ -5,8 +5,8 @@ import tensorflow as tf
 from tensorflow.keras import layers
 from tensorflow.keras.layers.experimental import preprocessing
 
-EPOCHS = int(sys.argv[1])
-BATCH_SIZE = int(sys.argv[2])
+EPOCHS = int(10)
+BATCH_SIZE = int(5)
 
 train = pd.read_csv('train.csv')
 validate = pd.read_csv('validate.csv')
